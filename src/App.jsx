@@ -67,7 +67,8 @@ function App() {
               return (
                 <div key="highestAlphabet">
                   <h3>Highest Alphabet:</h3>
-                  <p>{responseData.highest_alphabet || 'None'}</p>
+
+                  <p>{responseData.highest_alphabet.join(', ') || 'None'}</p>
                 </div>
               );
             default:
@@ -88,7 +89,7 @@ function App() {
               <label >
                 Please provide JSON Input:
                 <textarea
-                  class="form-control"
+                  className="form-control"
                   value={jsonInput}
                   onChange={handleInputChange}
                   rows="4"
@@ -101,7 +102,7 @@ function App() {
             <button type="submit" className="mt-4 btn btn-block btn-success col-6">Submit</button>
 
           </form>
-          {responseData && (
+          {(
             <div>
               <h2>Options:</h2>
               <Select
