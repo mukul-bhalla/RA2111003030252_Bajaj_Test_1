@@ -28,7 +28,7 @@ function App() {
       }
 
       // Send POST request to backend
-      const response = await axios.post('http://localhost:3000/bfhl', {
+      const response = await axios.post('https://bajaj-test-backend.onrender.com/bfhl', {
         data: parsedData.data,
       });
 
